@@ -28,7 +28,7 @@ public class FilterTaskAuth extends OncePerRequestFilter {
 
         var servletPath = request.getServletPath();
 
-        if (servletPath.equals("/tasks/")) {
+        if (servletPath.startsWith("/tasks/")) {
 
             // Pegar auth (user, pass)
             var authorization = request.getHeader("Authorization");
